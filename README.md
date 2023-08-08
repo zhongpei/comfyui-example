@@ -1,6 +1,19 @@
 # comfyui-example
 
-## 
+如何使用例子：
+
+* 安装 https://github.com/ltdrdata/ComfyUI-Manager 
+* 图片或json文件，拖入浏览器
+* 安装缺失的插件
+![image](https://github.com/zhongpei/comfyui-example/assets/10387775/20bec2dc-bcc7-4e7b-a68c-868d147814d2)
+
+
+## 汉化
+
+https://github.com/ZHO-ZHO-ZHO/ComfyUI-ZHO-Chinese.git
+
+## 官方例子
+
 https://comfyanonymous.github.io/ComfyUI_examples/
 
 
