@@ -1,0 +1,1404 @@
+{
+  "last_node_id": 68,
+  "last_link_id": 101,
+  "nodes": [
+    {
+      "id": 38,
+      "type": "ToBasicPipe",
+      "pos": [
+        1167,
+        645
+      ],
+      "size": {
+        "0": 241.79998779296875,
+        "1": 106
+      },
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 40
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 41
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 42
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 43,
+          "slot_index": 3
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 44,
+          "slot_index": 4
+        }
+      ],
+      "outputs": [
+        {
+          "name": "basic_pipe",
+          "type": "BASIC_PIPE",
+          "links": [
+            45
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ToBasicPipe"
+      }
+    },
+    {
+      "id": 32,
+      "type": "VAEDecode",
+      "pos": [
+        1429,
+        464
+      ],
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 33
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 34
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            39
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      }
+    },
+    {
+      "id": 31,
+      "type": "CLIPTextEncode",
+      "pos": [
+        533,
+        438
+      ],
+      "size": {
+        "0": 210,
+        "1": 54
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 31
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 32,
+          "widget": {
+            "name": "text",
+            "config": [
+              "STRING",
+              {
+                "multiline": true
+              }
+            ]
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            37,
+            44
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 34,
+      "type": "PrimitiveNode",
+      "pos": [
+        -60,
+        342
+      ],
+      "size": {
+        "0": 398,
+        "1": 140
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            32
+          ],
+          "widget": {
+            "name": "text",
+            "config": [
+              "STRING",
+              {
+                "multiline": true
+              }
+            ]
+          },
+          "slot_index": 0
+        }
+      ],
+      "title": "Negative Prompt",
+      "properties": {},
+      "widgets_values": [
+        ""
+      ],
+      "color": "#332922",
+      "bgcolor": "#593930",
+      "shape": 4
+    },
+    {
+      "id": 30,
+      "type": "CLIPTextEncode",
+      "pos": [
+        531,
+        236
+      ],
+      "size": {
+        "0": 210,
+        "1": 54
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 29
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 30,
+          "widget": {
+            "name": "text",
+            "config": [
+              "STRING",
+              {
+                "multiline": true
+              }
+            ]
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            36,
+            43
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "outdoor,a woman in a gold dress is posing in the snow, ruan jia and artgerm, flowing glowing hair, a cute young woman, winged, glowing aesthetic, beautiful avatar pictures, feathered hair, 1 8 yo, jaw-dropping beauty, 8 k illustration"
+      ]
+    },
+    {
+      "id": 33,
+      "type": "PrimitiveNode",
+      "pos": [
+        37,
+        76
+      ],
+      "size": {
+        "0": 402,
+        "1": 188
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            30
+          ],
+          "widget": {
+            "name": "text",
+            "config": [
+              "STRING",
+              {
+                "multiline": true
+              }
+            ]
+          },
+          "slot_index": 0
+        }
+      ],
+      "title": "Positive Prompt",
+      "properties": {},
+      "widgets_values": [
+        "outdoor,a woman in a gold dress is posing in the snow, ruan jia and artgerm, flowing glowing hair, a cute young woman, winged, glowing aesthetic, beautiful avatar pictures, feathered hair, 1 8 yo, jaw-dropping beauty, 8 k illustration"
+      ],
+      "color": "#232",
+      "bgcolor": "#353",
+      "shape": 4
+    },
+    {
+      "id": 65,
+      "type": "PrimitiveNode",
+      "pos": [
+        1424,
+        1377
+      ],
+      "size": {
+        "0": 398,
+        "1": 140
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            90
+          ],
+          "widget": {
+            "name": "text",
+            "config": [
+              "STRING",
+              {
+                "multiline": true
+              }
+            ]
+          },
+          "slot_index": 0
+        }
+      ],
+      "title": "Negative Prompt",
+      "properties": {},
+      "widgets_values": [
+        "text, watermark, (worst quality, low quality), headgear, deformed hand, easynegative, BadDream,"
+      ],
+      "color": "#332922",
+      "bgcolor": "#593930",
+      "shape": 4
+    },
+    {
+      "id": 63,
+      "type": "CLIPTextEncode",
+      "pos": [
+        2081,
+        1208
+      ],
+      "size": {
+        "0": 210,
+        "1": 54
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 92
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 90,
+          "widget": {
+            "name": "text",
+            "config": [
+              "STRING",
+              {
+                "multiline": true
+              }
+            ]
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            94,
+            97
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "text, watermark, (worst quality, low quality), headgear, deformed hand, easynegative, BadDream,"
+      ]
+    },
+    {
+      "id": 62,
+      "type": "CLIPTextEncode",
+      "pos": [
+        2033,
+        1133
+      ],
+      "size": {
+        "0": 210,
+        "1": 54
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 91
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 89,
+          "widget": {
+            "name": "text",
+            "config": [
+              "STRING",
+              {
+                "multiline": true
+              }
+            ]
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            93,
+            96
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "outdoor,a woman in a gold dress is posing in the snow, ruan jia and artgerm, flowing glowing hair, a cute young woman, winged, glowing aesthetic, beautiful avatar pictures, feathered hair, 1 8 yo, jaw-dropping beauty, 8 k illustration"
+      ]
+    },
+    {
+      "id": 60,
+      "type": "VAEDecode",
+      "pos": [
+        2325,
+        400
+      ],
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 84
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 85
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            87
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      }
+    },
+    {
+      "id": 55,
+      "type": "SaveImage",
+      "pos": [
+        2641,
+        223
+      ],
+      "size": {
+        "0": 315,
+        "1": 270
+      },
+      "flags": {},
+      "order": 20,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 87
+        }
+      ],
+      "properties": {},
+      "widgets_values": [
+        "ComfyUI"
+      ]
+    },
+    {
+      "id": 67,
+      "type": "VAEDecode",
+      "pos": [
+        3218,
+        497
+      ],
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {},
+      "order": 21,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 99,
+          "slot_index": 0
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 101
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            100
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      }
+    },
+    {
+      "id": 58,
+      "type": "FromBasicPipe",
+      "pos": [
+        1754,
+        916
+      ],
+      "size": {
+        "0": 241.79998779296875,
+        "1": 106
+      },
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "basic_pipe",
+          "type": "BASIC_PIPE",
+          "link": 79
+        }
+      ],
+      "outputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "links": [
+            80,
+            98
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "links": [
+            91,
+            92
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "links": [
+            85,
+            101
+          ],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "links": [],
+          "shape": 3,
+          "slot_index": 3
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "links": [],
+          "shape": 3,
+          "slot_index": 4
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "FromBasicPipe"
+      }
+    },
+    {
+      "id": 68,
+      "type": "SaveImage",
+      "pos": [
+        3494,
+        200
+      ],
+      "size": {
+        "0": 315,
+        "1": 270
+      },
+      "flags": {},
+      "order": 22,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 100
+        }
+      ],
+      "properties": {},
+      "widgets_values": [
+        "ComfyUI"
+      ]
+    },
+    {
+      "id": 37,
+      "type": "SaveImage",
+      "pos": [
+        1712,
+        46
+      ],
+      "size": {
+        "0": 315,
+        "1": 270
+      },
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 39
+        }
+      ],
+      "properties": {},
+      "widgets_values": [
+        "ComfyUI"
+      ]
+    },
+    {
+      "id": 29,
+      "type": "CheckpointLoaderSimple",
+      "pos": [
+        46,
+        585
+      ],
+      "size": {
+        "0": 397,
+        "1": 98
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            35,
+            40
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            29,
+            31,
+            41
+          ],
+          "slot_index": 1
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            34,
+            42
+          ],
+          "slot_index": 2
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CheckpointLoaderSimple"
+      },
+      "widgets_values": [
+        "XL\\sdXL_v10.safetensors"
+      ]
+    },
+    {
+      "id": 57,
+      "type": "## make-sdxl-refiner-basic_pipe [4a53fd]",
+      "pos": [
+        961,
+        934
+      ],
+      "size": {
+        "0": 400,
+        "1": 246
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "BASIC_PIPE",
+          "type": "BASIC_PIPE",
+          "links": [
+            79,
+            86
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "title": "## make-sdxl-refiner-basic_pipe",
+      "properties": {
+        "Node name for S&R": "## make-sdxl-refiner-basic_pipe [4a53fd]"
+      },
+      "widgets_values": [
+        "real\\braBeautifulRealistic_brav5.safetensors",
+        1024,
+        1536,
+        6,
+        2.5,
+        "a woman in a black sports bra standing in a field of grass and tree",
+        "Deformed, unrealistic, bad quality, grainy, noisy, plastic, hazy, low contrast, "
+      ]
+    },
+    {
+      "id": 39,
+      "type": "ReencodeLatentPipe",
+      "pos": [
+        1622,
+        641
+      ],
+      "size": {
+        "0": 315,
+        "1": 98
+      },
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 46
+        },
+        {
+          "name": "input_basic_pipe",
+          "type": "BASIC_PIPE",
+          "link": 45,
+          "slot_index": 1
+        },
+        {
+          "name": "output_basic_pipe",
+          "type": "BASIC_PIPE",
+          "link": 86,
+          "slot_index": 2
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            88
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ReencodeLatentPipe"
+      },
+      "widgets_values": [
+        "None"
+      ]
+    },
+    {
+      "id": 36,
+      "type": "EmptyLatentImage",
+      "pos": [
+        637,
+        637
+      ],
+      "size": {
+        "0": 295.7807922363281,
+        "1": 106
+      },
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            38
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "title": "Image Size\n",
+      "properties": {
+        "Node name for S&R": "EmptyLatentImage"
+      },
+      "widgets_values": [
+        896,
+        1152,
+        1
+      ]
+    },
+    {
+      "id": 64,
+      "type": "PrimitiveNode",
+      "pos": [
+        1431,
+        1113
+      ],
+      "size": {
+        "0": 402,
+        "1": 188
+      },
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            89
+          ],
+          "widget": {
+            "name": "text",
+            "config": [
+              "STRING",
+              {
+                "multiline": true
+              }
+            ]
+          },
+          "slot_index": 0
+        }
+      ],
+      "title": "Positive Prompt",
+      "properties": {},
+      "widgets_values": [
+        "outdoor,a woman in a gold dress is posing in the snow, ruan jia and artgerm, flowing glowing hair, a cute young woman, winged, glowing aesthetic, beautiful avatar pictures, feathered hair, 1 8 yo, jaw-dropping beauty, 8 k illustration"
+      ],
+      "color": "#232",
+      "bgcolor": "#353",
+      "shape": 4
+    },
+    {
+      "id": 59,
+      "type": "KSamplerAdvanced",
+      "pos": [
+        2383,
+        674
+      ],
+      "size": {
+        "0": 315,
+        "1": 546
+      },
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 80
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 93,
+          "slot_index": 1
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 94,
+          "slot_index": 2
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 88
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            84,
+            95
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSamplerAdvanced"
+      },
+      "widgets_values": [
+        "enable",
+        5,
+        "fixed",
+        100,
+        8,
+        "heun",
+        "normal",
+        55,
+        100,
+        "disable"
+      ]
+    },
+    {
+      "id": 66,
+      "type": "KSamplerAdvanced",
+      "pos": [
+        2941,
+        661
+      ],
+      "size": {
+        "0": 315,
+        "1": 546
+      },
+      "flags": {},
+      "order": 19,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 98,
+          "slot_index": 0
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 96,
+          "slot_index": 1
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 97,
+          "slot_index": 2
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 95
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            99
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSamplerAdvanced"
+      },
+      "widgets_values": [
+        "enable",
+        5,
+        "fixed",
+        50,
+        8,
+        "heun",
+        "normal",
+        55,
+        100,
+        "disable"
+      ]
+    },
+    {
+      "id": 35,
+      "type": "KSampler",
+      "pos": [
+        974,
+        186
+      ],
+      "size": {
+        "0": 315,
+        "1": 474
+      },
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 35
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 36
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 37
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 38
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            33,
+            46
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [
+        382114558958867,
+        "fixed",
+        20,
+        6,
+        "heun",
+        "normal",
+        1
+      ]
+    }
+  ],
+  "links": [
+    [
+      29,
+      29,
+      1,
+      30,
+      0,
+      "CLIP"
+    ],
+    [
+      30,
+      33,
+      0,
+      30,
+      1,
+      "STRING"
+    ],
+    [
+      31,
+      29,
+      1,
+      31,
+      0,
+      "CLIP"
+    ],
+    [
+      32,
+      34,
+      0,
+      31,
+      1,
+      "STRING"
+    ],
+    [
+      33,
+      35,
+      0,
+      32,
+      0,
+      "LATENT"
+    ],
+    [
+      34,
+      29,
+      2,
+      32,
+      1,
+      "VAE"
+    ],
+    [
+      35,
+      29,
+      0,
+      35,
+      0,
+      "MODEL"
+    ],
+    [
+      36,
+      30,
+      0,
+      35,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      37,
+      31,
+      0,
+      35,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      38,
+      36,
+      0,
+      35,
+      3,
+      "LATENT"
+    ],
+    [
+      39,
+      32,
+      0,
+      37,
+      0,
+      "IMAGE"
+    ],
+    [
+      40,
+      29,
+      0,
+      38,
+      0,
+      "MODEL"
+    ],
+    [
+      41,
+      29,
+      1,
+      38,
+      1,
+      "CLIP"
+    ],
+    [
+      42,
+      29,
+      2,
+      38,
+      2,
+      "VAE"
+    ],
+    [
+      43,
+      30,
+      0,
+      38,
+      3,
+      "CONDITIONING"
+    ],
+    [
+      44,
+      31,
+      0,
+      38,
+      4,
+      "CONDITIONING"
+    ],
+    [
+      45,
+      38,
+      0,
+      39,
+      1,
+      "BASIC_PIPE"
+    ],
+    [
+      46,
+      35,
+      0,
+      39,
+      0,
+      "LATENT"
+    ],
+    [
+      79,
+      57,
+      0,
+      58,
+      0,
+      "BASIC_PIPE"
+    ],
+    [
+      80,
+      58,
+      0,
+      59,
+      0,
+      "MODEL"
+    ],
+    [
+      84,
+      59,
+      0,
+      60,
+      0,
+      "LATENT"
+    ],
+    [
+      85,
+      58,
+      2,
+      60,
+      1,
+      "VAE"
+    ],
+    [
+      86,
+      57,
+      0,
+      39,
+      2,
+      "BASIC_PIPE"
+    ],
+    [
+      87,
+      60,
+      0,
+      55,
+      0,
+      "IMAGE"
+    ],
+    [
+      88,
+      39,
+      0,
+      59,
+      3,
+      "LATENT"
+    ],
+    [
+      89,
+      64,
+      0,
+      62,
+      1,
+      "STRING"
+    ],
+    [
+      90,
+      65,
+      0,
+      63,
+      1,
+      "STRING"
+    ],
+    [
+      91,
+      58,
+      1,
+      62,
+      0,
+      "CLIP"
+    ],
+    [
+      92,
+      58,
+      1,
+      63,
+      0,
+      "CLIP"
+    ],
+    [
+      93,
+      62,
+      0,
+      59,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      94,
+      63,
+      0,
+      59,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      95,
+      59,
+      0,
+      66,
+      3,
+      "LATENT"
+    ],
+    [
+      96,
+      62,
+      0,
+      66,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      97,
+      63,
+      0,
+      66,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      98,
+      58,
+      0,
+      66,
+      0,
+      "MODEL"
+    ],
+    [
+      99,
+      66,
+      0,
+      67,
+      0,
+      "LATENT"
+    ],
+    [
+      100,
+      67,
+      0,
+      68,
+      0,
+      "IMAGE"
+    ],
+    [
+      101,
+      58,
+      2,
+      67,
+      1,
+      "VAE"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {},
+  "version": 0.4
+}
