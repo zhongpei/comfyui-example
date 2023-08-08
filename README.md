@@ -4,6 +4,12 @@
 https://comfyanonymous.github.io/ComfyUI_examples/
 
 
+## 修手
+https://github.com/bash-j/mikey_nodes
+
+
+## 高分辨率
+
 I uploaded these to Git because that's the only place that would save the workflow metadata. I think you have to click the image links. But you can drag and drop these images to see my workflow, which I spent some time on and am proud of.
 
 FYI Comfy's latent handling is SUPERIOR for testing this stuff! Do check it out if you haven't yet.
