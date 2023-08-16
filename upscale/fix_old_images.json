@@ -1,0 +1,796 @@
+{
+  "last_node_id": 39,
+  "last_link_id": 45,
+  "nodes": [
+    {
+      "id": 14,
+      "type": "UpscaleModelLoader",
+      "pos": [
+        1194,
+        -450
+      ],
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 0,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "UPSCALE_MODEL",
+          "type": "UPSCALE_MODEL",
+          "links": [
+            37
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "UpscaleModelLoader"
+      },
+      "widgets_values": [
+        "RealESRGAN_x4plus.pth"
+      ]
+    },
+    {
+      "id": 39,
+      "type": "PreviewImage",
+      "pos": [
+        -172,
+        471
+      ],
+      "size": [
+        605.4018459735646,
+        505.18385376140805
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 45
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 6,
+      "type": "PreviewImage",
+      "pos": [
+        435,
+        472
+      ],
+      "size": [
+        633.2170325537952,
+        504.67633916470345
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 40
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 5,
+      "type": "PreviewImage",
+      "pos": [
+        -612,
+        471
+      ],
+      "size": [
+        432.9630809527632,
+        500.2787134020638
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 4
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 36,
+      "type": "BLIP Model Loader",
+      "pos": [
+        -104,
+        -166
+      ],
+      "size": [
+        322.46109562137235,
+        58
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "BLIP_MODEL",
+          "type": "BLIP_MODEL",
+          "links": [
+            44
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BLIP Model Loader"
+      },
+      "widgets_values": [
+        "caption"
+      ]
+    },
+    {
+      "id": 2,
+      "type": "ImageUpscaleWithModel",
+      "pos": [
+        -108,
+        -67
+      ],
+      "size": [
+        325.80559591179735,
+        89.55283198239113
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "upscale_model",
+          "type": "UPSCALE_MODEL",
+          "link": 1
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 2,
+          "slot_index": 1
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            5,
+            8
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageUpscaleWithModel"
+      }
+    },
+    {
+      "id": 1,
+      "type": "UpscaleModelLoader",
+      "pos": [
+        -110,
+        74
+      ],
+      "size": [
+        331.08309445967234,
+        58.02128348141423
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 2,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "UPSCALE_MODEL",
+          "type": "UPSCALE_MODEL",
+          "links": [
+            1
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "UpscaleModelLoader"
+      },
+      "widgets_values": [
+        "RealESRGAN_x4plus.pth"
+      ]
+    },
+    {
+      "id": 3,
+      "type": "Load Image Batch",
+      "pos": [
+        -115,
+        178
+      ],
+      "size": [
+        341.0160927171223,
+        198
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            2,
+            4,
+            42
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "filename_text",
+          "type": "STRING",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Load Image Batch"
+      },
+      "widgets_values": [
+        "incremental_image",
+        0,
+        "Batch 001",
+        "D:\\train_XL\\成都 八十年代 老照片 无水印",
+        "*",
+        "false"
+      ]
+    },
+    {
+      "id": 13,
+      "type": "ImageScaleBy",
+      "pos": [
+        241,
+        18
+      ],
+      "size": [
+        410.74640365044,
+        82
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 8
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            36,
+            45
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageScaleBy"
+      },
+      "widgets_values": [
+        "nearest-exact",
+        0.5
+      ]
+    },
+    {
+      "id": 21,
+      "type": "Checkpoint Loader (Simple)",
+      "pos": [
+        -99,
+        -329
+      ],
+      "size": {
+        "0": 315,
+        "1": 118
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            39
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            18
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            35
+          ],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "NAME_STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Checkpoint Loader (Simple)"
+      },
+      "widgets_values": [
+        "XL\\sdXL_v10Refiner.safetensors"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "Image Save",
+      "pos": [
+        1193,
+        510
+      ],
+      "size": [
+        326.45303226192755,
+        561.1416728067918
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 5
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Image Save"
+      },
+      "widgets_values": [
+        "[time(%Y-%m-%d)]",
+        "chengdu",
+        "_",
+        4,
+        "false",
+        "jpeg",
+        100,
+        "false",
+        "false",
+        "false",
+        "true",
+        "true",
+        "true"
+      ]
+    },
+    {
+      "id": 27,
+      "type": "SeargeSDXLRefinerPromptEncoder",
+      "pos": [
+        233,
+        -324
+      ],
+      "size": [
+        418.17419194978754,
+        296.5569638622251
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "refiner_clip",
+          "type": "CLIP",
+          "link": 18
+        },
+        {
+          "name": "pos_r",
+          "type": "STRING",
+          "link": 43,
+          "widget": {
+            "name": "pos_r",
+            "config": [
+              "STRING",
+              {
+                "multiline": true,
+                "default": "POS_R"
+              }
+            ]
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "refiner_positive",
+          "type": "CONDITIONING",
+          "links": [
+            33
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "refiner_negative",
+          "type": "CONDITIONING",
+          "links": [
+            34
+          ],
+          "shape": 3,
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SeargeSDXLRefinerPromptEncoder"
+      },
+      "widgets_values": [
+        "8K HD",
+        "low quality, low resolution,watermark, mark, nsfw, lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality,signature, watermark, username",
+        6,
+        2.5,
+        2048,
+        2048
+      ]
+    },
+    {
+      "id": 35,
+      "type": "BLIP Analyze Image",
+      "pos": [
+        244,
+        145
+      ],
+      "size": [
+        404.81340539299003,
+        226.86717544330997
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 42
+        },
+        {
+          "name": "blip_model",
+          "type": "BLIP_MODEL",
+          "link": 44
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            43
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "BLIP Analyze Image"
+      },
+      "widgets_values": [
+        "caption",
+        "What does the image consist of?"
+      ]
+    },
+    {
+      "id": 34,
+      "type": "Image Save",
+      "pos": [
+        670,
+        -320
+      ],
+      "size": [
+        337.8682839241287,
+        686.8203420695426
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 41
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Image Save"
+      },
+      "widgets_values": [
+        "[time(%Y-%m-%d)]",
+        "chengdu",
+        "_",
+        4,
+        "false",
+        "jpeg",
+        100,
+        "false",
+        "false",
+        "false",
+        "true",
+        "true",
+        "true"
+      ]
+    },
+    {
+      "id": 33,
+      "type": "UltimateSDUpscale",
+      "pos": [
+        1197,
+        -339
+      ],
+      "size": [
+        313.7283311274846,
+        802.5852091970022
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 36
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 39
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 33
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 34
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 35
+        },
+        {
+          "name": "upscale_model",
+          "type": "UPSCALE_MODEL",
+          "link": 37
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            40,
+            41
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "UltimateSDUpscale"
+      },
+      "widgets_values": [
+        2,
+        207882872195103,
+        "randomize",
+        20,
+        8,
+        "dpmpp_2m_sde",
+        "karras",
+        0.2,
+        "Linear",
+        512,
+        512,
+        16,
+        64,
+        "None",
+        1,
+        64,
+        8,
+        16,
+        "disable"
+      ]
+    }
+  ],
+  "links": [
+    [
+      1,
+      1,
+      0,
+      2,
+      0,
+      "UPSCALE_MODEL"
+    ],
+    [
+      2,
+      3,
+      0,
+      2,
+      1,
+      "IMAGE"
+    ],
+    [
+      4,
+      3,
+      0,
+      5,
+      0,
+      "IMAGE"
+    ],
+    [
+      5,
+      2,
+      0,
+      4,
+      0,
+      "IMAGE"
+    ],
+    [
+      8,
+      2,
+      0,
+      13,
+      0,
+      "IMAGE"
+    ],
+    [
+      18,
+      21,
+      1,
+      27,
+      0,
+      "CLIP"
+    ],
+    [
+      33,
+      27,
+      0,
+      33,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      34,
+      27,
+      1,
+      33,
+      3,
+      "CONDITIONING"
+    ],
+    [
+      35,
+      21,
+      2,
+      33,
+      4,
+      "VAE"
+    ],
+    [
+      36,
+      13,
+      0,
+      33,
+      0,
+      "IMAGE"
+    ],
+    [
+      37,
+      14,
+      0,
+      33,
+      5,
+      "UPSCALE_MODEL"
+    ],
+    [
+      39,
+      21,
+      0,
+      33,
+      1,
+      "MODEL"
+    ],
+    [
+      40,
+      33,
+      0,
+      6,
+      0,
+      "IMAGE"
+    ],
+    [
+      41,
+      33,
+      0,
+      34,
+      0,
+      "IMAGE"
+    ],
+    [
+      42,
+      3,
+      0,
+      35,
+      0,
+      "IMAGE"
+    ],
+    [
+      43,
+      35,
+      0,
+      27,
+      1,
+      "STRING"
+    ],
+    [
+      44,
+      36,
+      0,
+      35,
+      1,
+      "BLIP_MODEL"
+    ],
+    [
+      45,
+      13,
+      0,
+      39,
+      0,
+      "IMAGE"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {},
+  "version": 0.4
+}
